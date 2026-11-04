@@ -1,0 +1,23 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f6f4ee; color: #183333; font: 1rem/1.55 system-ui,sans-serif; }
+.wrap { width: min(68rem, 92%); margin-inline: auto; }
+header { background: #173d3a; color: white; }
+.marca { display: flex; flex-wrap: wrap; gap: .5rem 2rem; justify-content: space-between; padding-block: 1rem; font-weight: 750; }
+.marca small { font-weight: 450; }
+main { padding-block: 2.5rem; }
+.etiqueta { font-size: .78rem; letter-spacing: .09em; font-weight: 750; color: #30635b; }
+h1,h2,h3 { line-height: 1.14; margin: 0 0 .8rem; }
+h1 { font: bold clamp(2.6rem,6vw,5rem)/1.05 Georgia,serif; }
+h2 { font-size: 1.35rem; } h3 { font-size: 1.6rem; }
+.intro { max-width: 48ch; margin-bottom: 2rem; }
+.panel { display: grid; gap: 1.4rem; align-items: start; }
+.tarjeta,.resumen { padding: clamp(1rem,3vw,2rem); border-radius: .8rem; }
+.tarjeta { background: white; border-top: .4rem solid #e39b53; }
+.resumen { background: #dbece5; }
+dl { display: grid; grid-template-columns: auto 1fr; gap: .4rem 1rem; }
+dt { font-weight: bold; } dd { margin: 0; }
+button { border: 0; background: #195b4f; color: white; font: inherit; font-weight: bold; padding: .65rem 1rem; min-height: 44px; border-radius: .4rem; cursor: pointer; }
+button:disabled { background: #565f5d; cursor: default; }
+:focus-visible { outline: 3px solid #8b3612; outline-offset: 3px; }
+.nota { font-size: .85rem; }
+@media (min-width: 48rem) { .panel { grid-template-columns: 3fr 2fr; } }
