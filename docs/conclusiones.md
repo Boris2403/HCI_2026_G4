@@ -1,0 +1,11 @@
+# Conclusiones
+
+1. El boceto de `960 px` (`prototipos/prototipo-A.html`) exige desplazamiento horizontal en un viewport móvil (`scrollWidth = 960 px` en un viewport de `360 px`). La versión B (`src/index.html` + `src/estilos.css`) conserva horario, lugar, acción y estado y elimina ese desborde en los cuatro anchos ensayados (`320`, `360`, `768` y `1366 px`). Las mediciones están en [`resultados/pruebas.md`](../resultados/pruebas.md).
+2. La semántica HTML5 y la visibilidad del estado se defienden con una demostración reproducible. En la versión B, el teclado (`Tab` + `Enter`) permite confirmar y cancelar sin ratón, `role="status"` anuncia la respuesta en texto y el foco se traslada automáticamente entre `#reservar` y `#cancelar` (`src/reserva.js`).
+3. La evidencia técnica responde si los elementos caben (`scrollWidth <= innerWidth`) y si el flujo interactivo funciona en el navegador probado (Chromium). Para concluir que una persona comprende y ejecuta mejor el flujo, el grupo incorpora el protocolo de observación con usuarios en [`resultados/checklist.md`](../resultados/checklist.md), distinguiendo mediciones técnicas de pruebas con participantes reales.
+4. **Conclusión aplicada al proyecto (Aula Abierta · G4):**
+   - **Requisito:** Permitir que un estudiante consulte horario y laboratorio, reserve un cupo sin duplicados y pueda cancelar su reserva tanto en móvil (`320–360 px`) como en escritorio (`768–1366 px`) usando teclado.
+   - **Decisión:** Sustituir la cuadrícula rígida de `580px + 360px` por una estructura semántica (`main`, `section`, `article`, `dl`, `button`, `role="status"`) con diseño *mobile-first* de una columna base y punto de corte en `48rem` (`768 px`) hacia dos columnas (`3fr 2fr`).
+   - **Dato observado:** Se eliminó el desborde horizontal de `600 px` en móvil (`960 px → 360 px`) y se redujo a `0` el riesgo de reservas duplicadas por doble activación al deshabilitar `#reservar` y mover el foco a `#cancelar`.
+   - **Limitación:** El estado persiste únicamente en memoria durante la sesión actual de la pestaña y la validación con usuarios en aula se realiza sobre una muestra acotada de compañeros.
+   - **Siguiente ajuste:** Persistir el estado en `sessionStorage` o backend multiusuario con validación de cupos restantes en servidor e indicador visual de plazas disponibles.
